@@ -23,7 +23,7 @@ public class Main {
             String warnaBuluKucing = scanner.nextLine();
 
             // Membuat objek Kucing
-            Kucing kucing = new Kucing(namaKucing, rasKucing, warnaBuluKucing);
+            Kucing kucing = new Kucing(rasKucing, namaKucing, warnaBuluKucing);
 
             // Menampilkan detail Kucing
             kucing.displayDetailKucing();
@@ -39,7 +39,8 @@ public class Main {
             String kemampuanAnjing = scanner.nextLine();
 
             // Membuat objek Anjing
-            Anjing anjing = new Anjing(namaAnjing, rasAnjing, warnaBuluAnjing, kemampuanAnjing);
+            String[] kemampuanArray = kemampuanAnjing.split(", ");
+            Anjing anjing = new Anjing(rasAnjing, namaAnjing, warnaBuluAnjing, kemampuanArray);
 
             // Menampilkan detail Anjing
             anjing.displayDetailAnjing();
