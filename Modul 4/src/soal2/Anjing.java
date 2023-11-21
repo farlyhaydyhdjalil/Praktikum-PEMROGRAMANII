@@ -1,16 +1,18 @@
 package soal2;
-class Anjing extends HewanPeliharaan {
+import java.util.Arrays;
+public class Anjing extends HewanPeliharaan{
     private String warnaBulu;
     private String[] kemampuan;
-    public Anjing(String r, String n, String W, String[] k) {
+
+    public Anjing(String r, String n, String warnaBulu, String[] kemampuan) {
         super(r, n);
-        this.warnaBulu = W;
-        this.kemampuan = k;
+        this.warnaBulu = warnaBulu;
+        this.kemampuan = kemampuan;
     }
-    @Override
-    public void  display() {
+
+    public void displayDetailAnjing(){
         super.display();
-        System.out.println("Memiliki warna bulu : " + warnaBulu);
-        System.out.println("Memiliki kemampuan : " + kemampuan[0] + " " + kemampuan[1] + " " + kemampuan[2]);
+        System.out.println("Warna Bulu: "+warnaBulu);
+        System.out.println("Memiliki kemampuan : " + Arrays.toString(kemampuan).replace("[","").replace("]","").replace(",",""));
     }
 }

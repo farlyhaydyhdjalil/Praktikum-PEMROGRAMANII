@@ -1,17 +1,16 @@
 package soal2;
 
-abstract class HewanPeliharaan {
-    protected String nama;
-    protected String ras;
+public abstract class HewanPeliharaan {
+    private String nama;
+    private String ras;
 
     public HewanPeliharaan(String r, String n) {
-        this.ras = r;
         this.nama = n;
+        this.ras = r;
     }
-
-    public void display() {
-        System.out.println("\nDetail Hewan Peliharaan:");
-        System.out.println("Nama hewan peliharaanku adalah : " + nama);
-        System.out.println("Dengan ras : " + ras);
+    public void display(){
+        System.out.println("Detail Hewan Peliharaan: ");
+        System.out.println("nama hewam peliharan: "+nama);
+        System.out.println("Ras: "+ras);
     }
 }

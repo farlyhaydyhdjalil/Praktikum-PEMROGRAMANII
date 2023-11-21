@@ -4,33 +4,43 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        while (true) {
+            System.out.println("Pilih Hewan Yang Ingin Diinputkan : ");
+            System.out.println("1 = Kucing");
+            System.out.println("2 = Anjing");
+            System.out.print("Masukkan Pilihan : ");
+            int pilihan = input.nextInt();
+            input.nextLine();
 
-        int pilihan;
-        Scanner scanner = new Scanner(System.in);
+            if (pilihan == 1) {
+                System.out.print("Nama Hewan Peliharaan : ");
+                String nama = input.nextLine();
+                System.out.print("Ras : ");
+                String ras = input.nextLine();
+                System.out.print("Warna Bulu : ");
+                String warna = input.nextLine();
 
-        System.out.println("Pilih jenis hewan yang ingin diinputkan: ");
-        System.out.println("1 = Kucing");
-        System.out.println("2 = Anjing");
-        System.out.print("Masukkan pilihan: ");
-        pilihan = scanner.nextInt();
+                Kucing kucing = new Kucing(nama, ras, warna);
+                kucing.displayDetailKucing();
+            }
+            else if (pilihan == 2) {
+                System.out.print("Nama Hewan Peliharaan : ");
+                String nama = input.nextLine();
+                System.out.print("Ras : ");
+                String ras = input.nextLine();
+                System.out.print("Warna Bulu : ");
+                String warna = input.nextLine();
+                System.out.print("Kemampuan : ");
+                String kemampuan = input.nextLine();
 
-        scanner.nextLine();
-        System.out.print("Nama hewan peliharaan: ");
-        String nama = scanner.nextLine();
-        System.out.print("Ras = ");
-        String ras = scanner.nextLine();
-        System.out.print("Warna bulu = ");
-        String warnaBulu = scanner.nextLine();
-
-        HewanPeliharaan hewanPeliharaan;
-        if (pilihan == 1) {
-            hewanPeliharaan = new Kucing(ras, nama, warnaBulu);
-        } else {
-            System.out.print("Kemampuan = ");
-            String kemampuan = scanner.nextLine() ;
-            String[] pisah = kemampuan.split("\\,") ;
-            hewanPeliharaan = new Anjing(ras, nama,warnaBulu, pisah);
+                Anjing anjing = new Anjing(nama, ras, warna, new String[]{kemampuan});
+                anjing.displayDetailAnjing();
+            }
+            else{
+                System.out.print("Input Tidak Valid");
+            }
+            break;
         }
-        hewanPeliharaan.display();
     }
 }
