@@ -4,7 +4,7 @@ public abstract class HewanPeliharaan {
     private String nama;
     private String ras;
 
-    public HewanPeliharaan(String r, String n) {
+    public HewanPeliharaan(String n, String r) {
         this.nama = n;
         this.ras = r;
     }
